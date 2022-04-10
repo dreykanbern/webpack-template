@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "stylelint": "^14.6.1",
+    "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.2.0"
+  }
+}
