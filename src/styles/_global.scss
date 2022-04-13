@@ -1,0 +1,15 @@
+$primaryColor: rgb(252, 224, 255);
+$secondaryColor: rgb(216, 216, 216);
+
+h1 {
+  color: $primaryColor;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: url(../images/batman-background.jpg);
+  &__subtitle {
+    color: $secondaryColor;
+  }
+}
