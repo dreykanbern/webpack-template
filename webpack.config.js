@@ -26,7 +26,7 @@ module.exports = {
     },
   },
   optimization: {
-    splitchunks: {
+    splitChunks: {
       chunks: 'all',
     },
   },
