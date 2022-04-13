@@ -7,10 +7,15 @@ if (process.env.NODE_ENV === 'production') {
 console.log(mode + ' mode');
 module.exports = {
   mode: mode,
+  entry: {
+    scripts: './src/index.js',
+  },
   output: {
+    filename: '[name].[contenthash].js',
     assetModuleFilename: 'assets/[hash][ext][query]',
     clean: true,
   },
+  devtool: 'source-map',
   devServer: {
     open: true,
     hot: true,
@@ -18,6 +23,11 @@ module.exports = {
     static: {
       directory: './src',
       watch: true,
+    },
+  },
+  optimization: {
+    splitchunks: {
+      chunks: 'all',
     },
   },
   plugins: [
@@ -69,6 +79,16 @@ module.exports = {
         test: /\.pug$/,
         loader: 'pug-loader',
         exclude: /(node_modules|bower_components)/,
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
     ],
   },
