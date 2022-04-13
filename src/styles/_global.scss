@@ -1,6 +1,10 @@
 $primaryColor: rgb(252, 224, 255);
 $secondaryColor: rgb(216, 216, 216);
 
+html {
+  font-family: generalFont;
+}
+
 h1 {
   color: $primaryColor;
 }

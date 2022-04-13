@@ -9,6 +9,7 @@ module.exports = {
   mode: mode,
   output: {
     assetModuleFilename: 'assets/[hash][ext][query]',
+    clean: true,
   },
   devServer: {
     open: true,
@@ -58,6 +59,10 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|jpeg|svg|gif|webp)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
     ],
